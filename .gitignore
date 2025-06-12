@@ -1,0 +1,18 @@
+# Node.js
+node_modules
+
+# Angular
+/frontend/node_modules
+/frontend/dist
+
+# PlatformIO
+.pio
+.vscode
+*.elf
+*.bin
+*.hex
+*.map
+
+# OS-filer
+.DS_Store
+Thumbs.db
