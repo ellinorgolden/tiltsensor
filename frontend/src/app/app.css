@@ -1,0 +1,7 @@
+.projector-container svg {
+  width: 300px;
+  height: auto;
+  transition: transform 0.5s ease;
+  display: block;
+  margin: auto;
+}
