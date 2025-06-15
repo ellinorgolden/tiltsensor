@@ -1,5 +1,5 @@
 <!-- Hvis vi har fått data -->
-<div class="projector-container" *ngIf="status !== null">
+<div class="projector-container" *ngIf="status$ | async as status">
   <p>Status: {{ status ? 'Opp' : 'Ned' }}</p>
 
   <svg

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { TiltService } from './tilt.service';
-import { ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -11,13 +11,10 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
 })
 export class App {
-  status: boolean | null = null;
+  status$ : Observable<boolean>;
 
-  constructor(private tiltService: TiltService, private cdr: ChangeDetectorRef) {
-    this.tiltService.getTiltStatus().subscribe((data: boolean) => {
-      this.status = data;
-      console.log('Status i komponent:', data);
-      this.cdr.detectChanges(); 
-    });
+  constructor(private tiltService: TiltService) {
+    this.status$ = this.tiltService.getTiltStatus();;
   }
+
 }
