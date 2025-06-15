@@ -11,14 +11,13 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
 })
 export class App {
-  status = 'Venter på data...';
+  status: boolean | null = null;
 
-  constructor(private tiltService: TiltService,
-               private cdr: ChangeDetectorRef
-  ) {
-    this.tiltService.getTiltStatus().subscribe(data => {
+  constructor(private tiltService: TiltService, private cdr: ChangeDetectorRef) {
+    this.tiltService.getTiltStatus().subscribe((data: boolean) => {
       this.status = data;
-      this.cdr.detectChanges(); // ← Tving Angular til å oppdatere skjermen
+      console.log('Status i komponent:', data);
+      this.cdr.detectChanges(); 
     });
   }
 }
