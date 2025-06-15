@@ -19,18 +19,19 @@ TiltSensor er et sanntids webgrensesnitt laget med Angular og koblet til en fysi
 
 ## Prosjektstruktur
 
-tiltsensor/
-├── frontend/ # Angular-prosjekt
-│ ├── src/assets/ # SVG-bilder
-│ ├── src/app/ # Komponenter og tjenester
-│ │ ├── app.ts # Rotkomponent
-│ │ ├── app.html # Mal med SVG-visning
-│ │ └── tilt.service.ts# WebSocket-klient
-├── server.js # Node.js-server for serieport og Socket.IO
-├── platformio.ini # Konfigurasjon for Arduino via PlatformIO
-├── src/ # Arduino-kildekode
+<pre>
+  tiltsensor/
+├── frontend/             # Angular-prosjekt
+│ ├── src/assets/         # SVG-bilder
+│ ├── src/app/            # Komponenter og tjenester
+│ │ ├── app.ts            # Rotkomponent
+│ │ ├── app.html          # Mal med SVG-visning
+│ │ └── tilt.service.ts   # WebSocket-klient
+├── server.js             # Node.js-server for serieport og Socket.IO
+├── platformio.ini        # Konfigurasjon for Arduino via PlatformIO
+├── src/                  # Arduino-kildekode
 │ └── main.cpp
-
+ </pre>
 
 ## Krav
 
@@ -42,18 +43,18 @@ tiltsensor/
 ### 1. Installer avhengigheter
 
 (Git Bash)
-cd tiltsensor
-npm install
-cd frontend
-npm install
+- cd tiltsensor
+- npm install
+- cd frontend
+- npm install
 
 ### 2. Kjør backend-server
-cd tiltsensor
-node server.js
+- cd tiltsensor
+- node server.js
 
 ### 3. Start Angular-applikasjonen
-cd frontend
-npm start
+- cd frontend
+- npm start
 
 Åpne nettleseren og gå til http://localhost:4200
 
@@ -64,5 +65,4 @@ GND → GND
 
 D0 → Digital pin 8 (eller annen valgfri pin, juster i koden)
 
-Bruk eventuelt en pull-down-motstand (10k ohm)
 
