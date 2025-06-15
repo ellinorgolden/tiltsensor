@@ -1,14 +1,13 @@
+<!-- Hvis vi har fått data -->
+<div class="projector-container" *ngIf="status !== null">
+  <p>Status: {{ status ? 'Opp' : 'Ned' }}</p>
 
-<div class="projector-container">
-  <p>Status: {{ status }}</p>
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 100 60"
     width="200"
     height="120"
-    [ngStyle]="{
-      transform: status.includes('down') ? 'rotate(180deg)' : 'rotate(0deg)'
-    }"
+    [ngStyle]="{ transform: status ? 'rotate(0deg)' : 'rotate(180deg)' }"
   >
     <rect x="10" y="10" rx="8" ry="8" width="60" height="40" stroke="black" stroke-width="5" fill="none" />
     <circle cx="78" cy="30" r="6" stroke="black" stroke-width="5" fill="none" />
@@ -18,3 +17,5 @@
   </svg>
 </div>
 
+<!-- Hvis status fremdeles er null -->
+<p *ngIf="status === null">Venter på data...</p>
