@@ -41,7 +41,7 @@ tiltsensor/
 
 ### 1. Installer avhengigheter
 
-```bash
+(Git Bash)
 cd tiltsensor
 npm install
 cd frontend
